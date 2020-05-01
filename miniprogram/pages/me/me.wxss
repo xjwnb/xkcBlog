@@ -1,0 +1,29 @@
+.me {
+  width: 100%;
+  height: 100vh;
+}
+
+.avatar {
+  margin-bottom: 30rpx;
+}
+
+.avat {
+  width: 250rpx;
+  height: 250rpx;
+  margin: 30rpx 0 20rpx;
+  margin-left: 50%;
+  transform: translate(-50%, 0);
+  border: 2rpx solid #eee;
+  border-radius: 50%;
+  box-shadow: 2rpx 2rpx 10rpx 10rpx #1296db;
+}
+
+.avat image {
+  width: 250rpx;
+  height: 250rpx;
+  border-radius: 50%;
+}
+
+.nickName {
+  text-align: center;
+}

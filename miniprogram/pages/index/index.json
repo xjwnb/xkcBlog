@@ -1,0 +1,9 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "Search-component": "../../components/search/search",
+    "Swiper-component": "../../components/swiper/swiper",
+    "Login-component": "../../components/login/login",
+    "BlogList-component": "../../components/blogList/blogList"
+  }
+}

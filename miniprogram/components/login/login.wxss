@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.block {
+  width: 500rpx;
+  height: 600rpx;
+  background-color: #fff;
+}
+
+.logo {
+  text-align: center;
+  height: 450rpx;
+  background-image: linear-gradient(to right, #3CCFFF, #359AFF);
+}
+
+.logo text {
+  font-weight: 700;
+  font-size: 77rpx;
+  line-height: 450rpx;
+  color: white;
+}
+
+.loginBtn {
+  padding: 30rpx;
+}

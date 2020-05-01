@@ -1,0 +1,11 @@
+<view class="swiper">
+  <swiper indicator-dots indicator-active-color="#1296db" autoplay circular>
+    <block wx:key="key" wx:for="{{swiperInfo}}">
+      <swiper-item >
+        <navigator url="../../pages/recommend/recommend?id={{item._id}}">
+          <image class="swiperImage" mode="widthFix" src="{{item.fileid}}"></image>
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

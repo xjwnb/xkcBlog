@@ -1,0 +1,34 @@
+/* miniprogram/pages/publish/publish.wxss */
+.publish {
+  padding: 30rpx 30rpx 0 30rpx;
+}
+
+.spac {
+  margin-top: 30rpx;
+}
+
+.sort {
+  display: flex;
+}
+
+.sort .sortText {
+  padding-left: 30rpx;
+  line-height: 88rpx;
+}
+
+.increCom {
+  position: fixed;
+  z-index: 9;
+  bottom: 200rpx;
+  right: 100rpx;
+  width: 130rpx;
+  height: 130rpx;
+  border: 1rpx solid #eee;
+  border-radius: 50%;
+  background-color: #eee;
+  box-shadow: 2rpx 2rpx 10rpx 5rpx #1296db;
+}
+
+.plusIcon {
+  padding: 17rpx 0 0 17rpx;
+}

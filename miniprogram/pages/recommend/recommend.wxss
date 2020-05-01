@@ -1,0 +1,31 @@
+.recommend {
+  height: 100vh;
+  width: 690rpx;
+  padding: 30rpx;
+}
+
+.center {
+  margin-top: 30rpx;
+  padding: 30rpx 0;
+  border: 10rpx solid;
+  border-image: linear-gradient(to right, #2654c7, #23b7cb) 1 10;
+}
+
+.fileid image {
+  width: 690rpx;
+  height: 500rpx;
+}
+
+.title {
+  text-align: center;
+  font-size: 50rpx;
+}
+
+.name {
+  padding: 10rpx 0;
+  text-align: center;
+}
+
+.content {
+  text-align: center;
+}

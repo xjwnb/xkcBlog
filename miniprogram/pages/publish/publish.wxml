@@ -1,0 +1,82 @@
+<view class="publish">
+	<form bindsubmit="DataSubmit">
+		<!-- 标题 -->
+		<van-cell-group>
+			<van-field name="title" 
+									required 
+									clearable 
+									label="标题" 
+									placeholder="请输入标题" />
+		</van-cell-group>
+		<!-- 选择类目 -->
+		<view class="sort spac">
+			<view class="sortBtn">
+				<van-button type="info" bind:click="choiceSort">请选择类目</van-button>
+			</view>
+			<view class="sortText">
+				<van-cell-group>
+					<van-field label="你选择的类目" 
+											name="sort" 
+											value="{{sortName}}" 
+											required 
+											clearable 
+											disabled />
+				</van-cell-group>
+			</view>
+		</view>
+		<!-- 弹出层 -->
+		<view class="popup">
+			<van-popup show="{{ show }}" 
+									position="bottom" 
+									custom-style="height: 50%;" 
+									bind:close="onClosePopup">
+				<!-- 类目选择器 -->
+				<van-picker show-toolbar 
+										title="请选择类目" 
+										columns="{{ sortList }}" 
+										bind:cancel="onCancelSort" 
+										bind:confirm="onConfirmSort" />
+			</van-popup>
+		</view>
+
+		<!-- 动态生成组件 -->
+		<view class="increCom" bindtap="incrementHandle">
+			<van-icon class="plusIcon" 
+								name="plus" 
+								size="50px" 
+								color="#1296db" />
+		</view>
+
+		<block wx:for="{{incrementList}}" wx:key="key">
+			<view wx:if="{{item.type === 'textarea'}}">
+				<template is="{{item.type}}" data="{{...item}}"></template>
+			</view>
+			<view wx:else>
+				<template is="{{item.type}}" data="{{...item}}"></template>
+			</view>
+		</block>
+
+		<button class="spac" 
+						type="primary" 
+						form-type="submit">提交</button>
+	</form>
+</view>
+
+<!-- textarea 模板 -->
+<template name="textarea">
+	<view class="input">
+		<textarea placeholder="请输入" 
+							name="{{name}}" 
+							class="spac" 
+							focus 
+							auto-height>
+		</textarea>
+	</view>
+</template>
+
+<!-- 图片模板 -->
+<template name="image">
+	<view class="spac">
+		<image name="{{name}}" src="{{src}}"></image>
+	</view>
+</template>

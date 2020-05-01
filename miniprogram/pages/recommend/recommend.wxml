@@ -1,0 +1,16 @@
+<view class="recommend">
+  <view class="fileid">
+    <image mode="scaleToFill" src="{{blogRecommend.fileid}}"></image>
+  </view>
+  <view class="center">
+    <view class="title">
+      <text>{{blogRecommend.title}}</text>
+    </view>
+    <view class="name">
+      <text>{{blogRecommend.name}}</text>
+    </view>
+    <view class="content">
+      <text decode>{{blogRecommend.content}}</text>
+    </view>
+  </view>
+</view>

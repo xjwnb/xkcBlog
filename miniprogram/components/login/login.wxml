@@ -1,0 +1,20 @@
+<!-- <van-button type="primary" bind:click="onClickShow">嵌入内容</van-button> -->
+<van-overlay show="{{ show }}" bind:click="onClickHide">
+  <view class="wrapper">
+    <view class="block">
+      <view class="logo">
+        <text>LOGO</text>
+      </view>
+      <view class="loginBtn">
+        <van-button
+                  icon="info-o" 
+                  type="primary" 
+                  type="info" 
+                  plain
+                  size="large"
+                  open-type="getUserInfo"
+                  bindgetuserinfo="loginHandle">请登录</van-button>
+      </view>
+    </view>
+  </view>
+</van-overlay>

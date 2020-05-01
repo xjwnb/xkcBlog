@@ -1,0 +1,18 @@
+<view class="me">
+	<view class="avatar">
+		<view class="avat">
+			<image mode="aspectFit asPectFill" src="{{userInfo.avatarUrl}}"></image>
+		</view>
+		<view class="nickName">
+			<text>{{userInfo.nickName}}</text>
+		</view>
+	</view>
+	<view class="content">
+		<van-cell title="收藏夹" is-link bind:click="showPopup" />
+		<van-cell title="评论我" is-link bind:click="showPopup" />
+		<van-cell title="关注" is-link bind:click="showPopup" />
+		<navigator url="../publish/publish">
+			<van-cell title="发表" is-link bind:click="showPopup" />
+		</navigator>
+	</view>
+</view>

@@ -1,0 +1,27 @@
+.top {
+  display: flex;
+}
+
+.searchInput {
+  flex: 1;
+  height: 50rpx;
+  border: 1rpx solid #1296db;
+  border-radius: 50rpx 0rpx 0rpx 50rpx;
+  padding: 10rpx 30rpx 10rpx;
+}
+
+.searchBtn {
+  width: 100rpx;
+  background-color: #1296db;
+  text-align: center;
+  border-radius: 0rpx 50rpx 50rpx 0rpx;
+  box-sizing: border-box;
+  padding-top: 7rpx;
+}
+
+.search {
+  width: 50rpx;
+  height: 50rpx;
+  background-color: #1296db;
+  padding-top: 5rpx;
+}

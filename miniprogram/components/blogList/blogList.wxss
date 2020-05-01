@@ -1,0 +1,7 @@
+.blogList {
+  margin-top: 30rpx;
+}
+
+.image image {
+  border-radius: 10%;
+}
