@@ -1,0 +1,19 @@
+<van-cell-group>
+	<navigator url="../../pages/userInfo/userInfo?openID={{userInfo._openid}}">
+    <van-cell>
+		  <view slot="title">
+			  <view class="userAvatar">
+          <van-image width="5rem" 
+                   height="5rem"
+                   round
+                   fit="cover" 
+                   center
+                   src="{{userInfo.userAvatar}}"></van-image>
+        </view>
+		  </view>
+      <view class="userName">
+        <text>昵称：{{userInfo.userName}}</text>
+      </view>
+	  </van-cell>
+  </navigator>
+</van-cell-group>

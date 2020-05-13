@@ -1,0 +1,5 @@
+<view class="follow">
+  <block wx:key="key" wx:for="{{blogInfo}}">
+    <FollowUserList-component userInfo="{{item}}" />
+  </block>
+</view>

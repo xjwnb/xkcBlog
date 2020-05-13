@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "BlogList-component": "../../components/blogList/blogList"
+  }
+}

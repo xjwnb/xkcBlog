@@ -1,20 +1,39 @@
 <view class="container">
-  <!-- 登录 -->
+	<!-- 登录 -->
 	<view wx:if="{{!isLogin}}">
 		<Login-component show="{{isLogin}}" />
 	</view>
 
-  <!-- 搜索框 -->
-	<Search-component />
+	<scroll-view>
+		<!-- 搜索框 -->
+		<Search-component bind:focus="focus" 
+											bind:getTitle="getTitle"
+											bind:search="search" />
 
-  <!-- 轮播推荐 -->
-	<view class="swiperImage">
-		<Swiper-component swiper-info="{{swiperInfo}}" />
-	</view>
+		<!-- 		<van-popup custom-class
+ 	 		show="{{ show }}"
+ 	 		position="top"
+ 	 		custom-style="height: 20%;"
+ 	 		bind:close="onClose"
+			safe-area-inset-top
+		/> -->
 
-  <!-- blogList -->
-  <block wx:key="key" wx:for="{{blogInfo}}">
-    <BlogList-component blogInfo="{{item}}" />
-  </block>
-	<view><text>哈哈哈</text></view>
+		<view wx:if="{{ show }}">
+			<van-dropdown-menu>
+				<van-dropdown-item value="{{ value }}" 
+													options="{{ option }}"
+													bind:change="choiceResult" />
+			</van-dropdown-menu>
+		</view>
+
+		<!-- 轮播推荐 -->
+		<view class="swiperImage">
+			<Swiper-component swiper-info="{{swiperInfo}}" />
+		</view>
+
+		<!-- blogList -->
+		<block wx:key="key" wx:for="{{blogInfo}}">
+			<BlogList-component blogInfo="{{item}}" />
+		</block>
+	</scroll-view>
 </view>

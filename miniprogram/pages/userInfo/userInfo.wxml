@@ -1,0 +1,8 @@
+<view class="userInfo">
+  <scroll-view>
+    <FollowUserList-component userInfo="{{userInfo}}" />
+    <block wx:key="key" wx:for="{{blogInfo}}">
+      <BlogList-component blogInfo="{{item}}" />
+    </block>
+  </scroll-view>
+</view>

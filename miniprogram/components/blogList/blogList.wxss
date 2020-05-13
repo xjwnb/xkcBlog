@@ -2,6 +2,24 @@
   margin-top: 30rpx;
 }
 
+.title {
+  width: 50%;
+}
+
+.title1 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.label1 {
+  /* display: -webkit-box; */
+  word-break: break-all;
+  text-overflow: ellipsis;
+  font-size: 28rpx;
+  overflow: hidden;
+}
+
+
 .image image {
   border-radius: 10%;
 }

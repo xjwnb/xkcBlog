@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "BlogList-component": "../../components/blogList/blogList"
+  },
   "navigationBarTitleText": "社区"
 }

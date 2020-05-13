@@ -1,0 +1,15 @@
+<van-collapse value="{{ activeName }}" bind:change="onChange" accordion>
+
+	<scroll-view>
+		<block wx:key="key" wx:for="{{ blogInfo }}">
+			<van-collapse-item title="{{ item[0].sort }}" name="{{index + 1}}">
+				<block wx:key="key" wx:for="{{item}}" wx:for-item="blog" wx:for-index="ind">
+					<BlogList-component blogInfo="{{blog}}" />
+				</block>
+			</van-collapse-item>
+		</block>
+	</scroll-view>
+
+
+
+</van-collapse>

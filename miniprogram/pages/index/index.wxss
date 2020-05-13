@@ -6,3 +6,7 @@
 .swiperImage {
   margin-top: 30rpx;
 }
+
+.custom-class {
+  background-color: yellowgreen;
+}

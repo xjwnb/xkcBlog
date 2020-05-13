@@ -1,0 +1,90 @@
+.userAvatar {
+  padding: 30rpx 30rpx 10rpx;
+}
+
+.userName {
+  padding-right: 100rpx;
+  text-align: center;
+}
+
+.time {
+  position: relative;
+}
+
+.like image {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  right: 60rpx;
+  bottom: 20rpx;
+}
+
+.follow image {
+  width: 66rpx;
+  height: 60rpx;
+  margin: 70rpx 35rpx 0 0;
+}
+
+.time {
+  position: absolute;
+  right: 200rpx;
+  bottom: 10rpx;
+}
+
+.number {
+  padding: 50rpx 30rpx 50rpx;
+  border-bottom: 2rpx solid #eee;
+}
+
+/* .read,.like,.follow {
+  text-align: center;
+} */
+
+.content {
+  margin: 30rpx;
+}
+
+.content .title {
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.content .title text {
+  font-size: larger;
+  font-weight: 600;
+}
+
+.textarea {
+  margin-left: 50rpx;
+  margin-bottom: 30rpx;
+}
+
+.image {
+  margin-bottom: 30rpx;
+  width: 100%;
+  margin-left: 50%;
+  transform: translate(-47%);
+}
+
+.image image {
+  margin: 0 auto;
+}
+
+.commentList {
+  margin: 30rpx;
+}
+
+.userImage {
+  vertical-align: center;
+  line-height: 72rpx;
+}
+
+.com {
+  display: flex;
+}
+
+.submitBtn button {
+  width: 100%;
+  background-color: #1296db;
+  color: #ffffff;
+}

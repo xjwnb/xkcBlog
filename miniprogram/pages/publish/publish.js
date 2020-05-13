@@ -12,7 +12,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    sortList: ['分享', '微信小程序', 'Java', 'PHP', 'NodeJs', '人工智能'],
+    sortList: ['微信小程序', 'Java', 'PHP', 'NodeJs', '人工智能'],
     componentsList: ['文本输入', '选择图片'],
     title: '',
     incrementList: [],
@@ -146,14 +146,21 @@ Page({
       ...textdata
     } = e.detail.value
 
+    // 从本地存储中获取用户名和用户头像
+    let localStorageData = wx.getStorageSync('userInfo')
+    let userName = localStorageData.nickName
+    let userAvatar = localStorageData.avatarUrl
+
     // 遍历textdata变量，并向 全局变量 textareaData中添加数据
     for (let v in textdata) {
       textareaData.push(textdata[v])
     }
-    // 向全局变量中添加 textareaData, imageSrcs, addOrder
+    // 向全局变量中添加 textareaData, imageSrcs, addOrder, userName, userAvator
     submitDataToDB.textareaData = textareaData
     submitDataToDB.imageSrcs = imageSrcs
     submitDataToDB.addOrder = addOrder
+    submitDataToDB.userName = userName
+    submitDataToDB.userAvatar = userAvatar
 
     // showLoading 提醒上传中
     wx.showLoading({
@@ -187,8 +194,7 @@ Page({
   checkEmpty() {
     let title = this.data.title
     let sort = this.data.sortName
-    console.log(title)
-    console.log(sort)
+
     if (!(title && sort)) {
       title ? remind = '请选择类目' : remind = '请输入标题'
       this.setData({
@@ -200,7 +206,6 @@ Page({
       })
     }
 
-    console.log(remind)
 
   }
 })

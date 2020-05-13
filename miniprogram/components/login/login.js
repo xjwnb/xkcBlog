@@ -1,4 +1,4 @@
-// components/login/login.js
+let cloudResult
 Component({
   /**
    * 组件的属性列表
@@ -39,6 +39,7 @@ Component({
       });
     },
 
+    // 点击登录按钮
     async loginHandle(e) {
       let userInfo = e.detail.userInfo
       let openId
@@ -47,12 +48,33 @@ Component({
       }).then(res => {
         openId = res.result.event.userInfo.openId
       })
+
+      cloudResult = await wx.cloud.callFunction({
+        name: 'BlogPersonalCount'
+      })
+
+      if (!cloudResult.result) {
+        cloudResult = await wx.cloud.callFunction({
+          name: 'blogPersonal'
+        })
+        cloudResult.result._id
+        wx.setStorageSync('blogPersonal', cloudResult.result._id)
+      }
+
+
       let userData = {
         avatarUrl: userInfo.avatarUrl,
         nickName: userInfo.nickName,
         openId
       }
       wx.setStorageSync('userInfo', userData)
+      // 获得 blogPersonal 中该用户的 _id
+      cloudResult = await wx.cloud.callFunction({
+        name: 'getblogPerson'
+      })
+
+      let id = cloudResult.result.data[0]._id
+      wx.setStorageSync('blogPersonal', id)
     }
   }
 })

@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "FollowUserList-component": "../../components/followUserList/followUserList"
+  }
+}

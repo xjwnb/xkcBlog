@@ -1,0 +1,12 @@
+.userAvatar {
+  position: relative;
+  top: 20rpx;
+  left: 30rpx;
+}
+
+.userName {
+  position: relative;
+  /* left: 10rpx; */
+  right: 200rpx;
+  top: 80rpx;
+}

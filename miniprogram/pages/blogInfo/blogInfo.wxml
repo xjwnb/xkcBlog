@@ -1,0 +1,134 @@
+<view>
+	<scroll-view>
+		<!-- 头部头像这里 -->
+		<van-cell-group title="分组1">
+			<van-cell>
+				<view slot="title">
+					<view class="van-cell-text userAvatar">
+						<van-image round width="5rem" height="5rem" fit="cover" src="{{blogInfo.userAvatar}}" />
+					</view>
+					<view class="userName">
+						<text>昵称:{{blogInfo.userName}}</text>
+					</view>
+				</view>
+
+				<view class="time">
+					<view class="t1">
+
+					</view>
+					<view class="van-cell-text t2">
+						<text>{{blogInfo.date}}</text>
+					</view>
+				</view>
+				<view wx:if="{{isShowLikeFollow}}">
+					<view class="like">
+						<image bindtap="like" src="{{isLike ? '../../images/base/like_active.png' : '../../images/base/like.png'}}"></image>
+					</view>
+					<view class="follow">
+						<image bindtap="follow" src="{{isFollow ? '../../images/base/follow_active.png' : '../../images/base/follow.png'}}"></image>
+					</view>
+				</view>
+			</van-cell>
+		</van-cell-group>
+		<!-- 头部结束 -->
+
+		<!-- 评论量,点赞量,阅读量 -->
+		<view class="number">
+			<van-row>
+				<van-col class="read" span="8">
+					<text>阅读量: {{blogInfo.readNum}}</text>
+				</van-col>
+				<van-col class="like" span="8">
+					<text>点赞量: {{blogInfo.likes}}</text>
+				</van-col>
+				<van-col class="follow" span="8">
+					<text>关注: {{blogInfo.follows}}</text>
+				</van-col>
+			</van-row>
+		</view>
+		<!-- 评论量,点赞量,阅读量 结束 -->
+
+		<!-- 主体内容--开始 -->
+		<view class="content">
+			<view class="title">
+				<text>{{blogInfo.title}}</text>
+			</view>
+			<!-- 模板渲染--开始 -->
+			<block wx:key="key" wx:for="{{incremenrArr}}">
+				<view wx:if="item.type === 'textarea'">
+					<template is="{{item.type}}" data="{{...item}}"></template>
+				</view>
+				<view wx:else>
+					<template is="{{item.type}}" data="{{...item}}"></template>
+				</view>
+			</block>
+			<!-- 模板渲染结束 -->
+		</view>
+
+		<!-- 评论开始 -->
+		<view class="commentList">
+			<view class="commentTemplate">
+				<block wx:key="key" wx:for="{{commentList}}">
+					<template is="comment" data="{{...item}}"></template>
+				</block>
+			</view>
+
+
+			<view class="send">
+				<form bindsubmit="send">
+					<view class="com">
+						<view class="commentInput">
+							<van-cell-group>
+								<van-field clearable 
+														name="commentContent"
+														label="评论：" 
+														placeholder="评论内容" 
+														bind:click-icon="onClickIcon"
+														value="{{inputData}}" />
+							</van-cell-group>
+						</view>
+						<view class="submitBtn">
+							<button 
+											form-type="submit" 
+											type="info">发送</button>
+						</view>
+					</view>
+				</form>
+			</view>
+		</view>
+
+		<!-- 评论结束 -->
+	</scroll-view>
+
+
+	<!-- 主体内容--结束 -->
+</view>
+
+<!-- 模板 -->
+<template name="textarea">
+	<view class="textarea">
+		<textarea auto-height name="{{name}}" value="{{content}}"></textarea>
+	</view>
+</template>
+
+<template name="image">
+	<view class="image">
+		<image src="{{content}}"></image>
+	</view>
+</template>
+
+<template name="comment">
+	<view class="userImage" >
+		<van-image 	width="2rem"
+  							height="2rem" 
+								fit="cover"
+								round
+								src="{{userAvatar}}" />
+		<!-- <view class="userName"> -->
+			<text>{{userName}}：</text>
+		<!-- </view> -->
+		<!-- <view class="content"> -->
+			<text>{{commentContent}} </text>
+		<!-- </view> -->
+	</view>
+</template>

@@ -68,6 +68,20 @@
 					"id": -1,
 					"name": "publish",
 					"pathName": "pages/publish/publish",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "community",
+					"pathName": "pages/community/community",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "follow",
+					"pathName": "pages/follow/follow",
 					"scene": null
 				}
 			]

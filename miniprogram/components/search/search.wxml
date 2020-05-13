@@ -1,8 +1,13 @@
   <view class="top">
-    <view class="searchInput">
-      <input placeholder="请输入" placeholder-style="line-height: 29rpx; padding-right: 20rpx" bindinput="bindKeyInput"></input>
-    </view>
-    <view class="searchBtn">
-      <image class="search" src="../../images/index/search.png" bindtap="search"></image>
-    </view>
+  	<view class="searchInput">
+  		<input placeholder="请输入"
+						 value="{{ value }}"
+						 bindinput="bindKeyInput" 
+						 placeholder-style="line-height: 29rpx; padding-right: 20rpx" 
+						 bindinput="bindKeyInput"
+						 bindfocus="inputFocus"></input>
+  	</view>
+  	<view class="searchBtn" bindtap="search">
+  		<image class="search" src="../../images/index/search.png" bindtap="search"></image>
+  	</view>
   </view>

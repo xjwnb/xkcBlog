@@ -24,12 +24,16 @@ exports.main = async (event, context) => {
     textareaData,      // 文本框内容
     imageSrcs,         // 图片内容
     addOrder,          // 文本 图片 提交顺序
+    userName,          // 用户名
+    userAvatar         // 用户头像
   } = event.submitDataToDB
 
   let likes = 0 // 点赞量
   let readNum = 0 // 阅读量
   let comments = 0 // 评论量
+  let follows = 0    // 关注量
   let date = new Date().toDateString() // 当前时间
+  let commentList = []
 
   // 集合 blogInfo 增加数据
   try {
@@ -45,7 +49,11 @@ exports.main = async (event, context) => {
         likes,               // 点赞量
         readNum,             // 阅读量
         comments,            // 评论量
-        defaultImage         // 默认添加的图片
+        follows,             // 关注量
+        defaultImage,        // 默认添加的图片
+        userName,            // 用户名
+        userAvatar,          // 用户头像
+        commentList          // 评论数据  
       }
     })
   } catch (e) {

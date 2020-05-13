@@ -1,0 +1,7 @@
+<view class="search">
+  <scroll-view>
+    <block wx:key="key" wx:for="{{ blogInfo }}">
+      <BlogList-component blogInfo="{{ item }}" />
+    </block>
+  </scroll-view>
+</view>

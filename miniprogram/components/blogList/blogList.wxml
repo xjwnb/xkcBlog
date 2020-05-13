@@ -1,27 +1,31 @@
 <view class="blogList">
 	<van-cell-group title="分组1">
-		<van-cell center>
-      <!-- 左侧信息 -->
-			<view slot="title">
-				<view class="van-cell-text">{{blogInfo.title}}</view>
-				<van-tag type="danger">{{blogInfo.textareaData[0]}}</van-tag>
-        <view>{{blogInfo.date}}</view>
-			</view>
-      <!-- 右侧图片 -->
-			<view class="image">
-        <van-image wx:if="{{blogInfo.imageSrcs.length}}" lazy-load 
-                    width="7rem" 
-                    height="7rem" 
-                    fit="cover" 
-                    show-loading 
-                    src="{{blogInfo.imageSrcs[0]}}" />
-				<van-image wx:else lazy-load 
-                    width="7rem" 
-                    height="7rem" 
-                    fit="cover" 
-                    show-loading 
-                    src="{{blogInfo.defaultImage}}" />
-			</view>
-		</van-cell>
+   <navigator url="../../pages/blogInfo/blogInfo?id={{newBlogInfo._id}}">
+   <van-cell center>
+       <!-- 左侧信息 -->
+  			<view slot="title">
+  				<view class="van-cell-text title1">{{newBlogInfo.title}}</view>
+  				<view class="label1" wx:if="{{newBlogInfo.textareaData[0]}}" >{{newBlogInfo.textareaData[0]}}</view>
+          <view>{{newBlogInfo.date}}</view>
+  			</view>
+        
+        <!-- 右侧图片 -->
+  			<view class="image">
+         <van-image wx:if="{{newBlogInfo.imageSrcs.length}}" lazy-load 
+                     width="7rem" 
+                     height="7rem" 
+                     fit="cover" 
+                     show-loading 
+                     src="{{newBlogInfo.imageSrcs[0]}}" />
+  				<van-image wx:else lazy-load 
+                     width="7rem" 
+                     height="7rem" 
+                     fit="cover" 
+                     show-loading 
+                     src="{{newBlogInfo.defaultImage}}" />
+  			</view>
+  		</van-cell>
+   </navigator>
+		
 	</van-cell-group>
 </view>
