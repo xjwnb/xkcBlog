@@ -31,7 +31,6 @@ App({
 
   },
 
-  // 将 blogInfo集合 中数据分类并赋值给 全局变量
   async getBlogInfoSort() {
     // 调用 getBlogInfo 云函数 获得数据
     cloudResult = await wx.cloud.callFunction({

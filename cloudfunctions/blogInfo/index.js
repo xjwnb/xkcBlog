@@ -32,7 +32,9 @@ exports.main = async (event, context) => {
   let readNum = 0 // 阅读量
   let comments = 0 // 评论量
   let follows = 0    // 关注量
-  let date = new Date().toDateString() // 当前时间
+  // let date = new Date().toDateString() // 当前时间
+  let date = formatTime(new Date())
+  console.log(date)
   let commentList = []
 
   // 集合 blogInfo 增加数据
@@ -60,4 +62,20 @@ exports.main = async (event, context) => {
     return e
   }
 
+}
+
+const formatTime = date => {
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+  const day = date.getDate()
+  const hour = date.getHours()
+  const minute = date.getMinutes()
+  const second = date.getSeconds()
+
+  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+}
+
+const formatNumber = n => {
+  n = n.toString()
+  return n[1] ? n : '0' + n
 }

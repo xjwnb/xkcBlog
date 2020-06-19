@@ -34,20 +34,6 @@ Page({
     this.getBlogInfo()
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
   // 调用 getBlogInfo 获得 blogInfo集合 中的数据
   async getBlogInfo() {
 
@@ -95,8 +81,8 @@ Page({
     this.setData({
       blogInfo: newBlogInfo
     },() => {
-      app.globalData.blogInfoSort = this.data.blogInfo
+      // app.globalData.blogInfoSort = this.data.blogInfo
+      console.log(this.data.blogInfo)
     })
-
   },
 })

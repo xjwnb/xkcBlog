@@ -28,21 +28,27 @@ Page({
     // 初始化获得 blogInfo 数据
     this.getBlogInfoByDB()
 
+    console.log('onload')
   },
 
-  onShow: function () {
+  async onShow() {
+    console.log('onshow')
+    // console.log(this.data.swiperInfo)
+    // 调用 getBlogInfo 云函数获取 blogInfo 集合的数据
+    cloudResult = await wx.cloud.callFunction({
+      name: 'getBlogInfo'
+    })
 
-    /*     // 初始化获得 blogInfo 数据
-        if (numLook !== 1) {
-          // blogInfoData = []
-          this.setData({
-            blogInfo: [],
-            blogNumPage: 1
-          })
-          this.getBlogInfoByDB()
+    // 将 getBlogInfo 云函数获取到的数据库信息赋值给全局变量 blogInfoData
+    blogInfoData = cloudResult.result.data.reverse()
+    this.setData({
+      blogInfo: []
+    })
+    console.log(blogInfoData)
+    this.setData({
+      blogInfo: blogInfoData
+    })
 
-        }
-        numLook ++ */
   },
 
   // 下拉刷新
@@ -74,6 +80,7 @@ Page({
         this.setData({
           swiperInfo: res.data
         })
+        console.log(res.data)
       })
   },
   // 检查是否登录
@@ -104,6 +111,8 @@ Page({
     // 将 getBlogInfo 云函数获取到的数据库信息赋值给全局变量 blogInfoData
     blogInfoData = cloudResult.result.data.reverse()
 
+    console.log(blogInfoData)
+
     let maxPage = Math.ceil(blogInfoData.length / this.data.blogPage)
 
     // 判断当前页码数是否大于最大页数  （当前是大于最大页码数）
@@ -124,6 +133,7 @@ Page({
     this.setData({
       blogInfo: this.data.blogInfo.concat(arrBlog)
     }, () => {
+      console.log(this.data.blogInfo)
       callback()
     })
 
@@ -145,20 +155,20 @@ Page({
 
       let searchResult = cloudResult.result.data
       searchData = searchResult
-      app.globalData.searchData = searchResult
+      /*       app.globalData.searchData = searchResult
 
-      let option = []
-      searchResult.map((item, index) => {
-        option.push({
-          text: item.title,
-          value: index
-        })
+            let option = []
+            searchResult.map((item, index) => {
+              option.push({
+                text: item.title,
+                value: index
+              })
 
-      })
+            })
 
-      this.setData({
-        option
-      })
+            this.setData({
+              option
+            }) */
       if (searchResult.length > 0) {
         this.showPopup()
       }
@@ -204,7 +214,7 @@ Page({
   // 点击搜索按钮从子组件传递过来的事件
   search() {
     if (!searchData.length) {
-      return 
+      return
     }
     wx.navigateTo({
       url: '../search/search',

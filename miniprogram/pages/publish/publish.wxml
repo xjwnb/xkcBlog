@@ -11,7 +11,7 @@
 		<!-- 选择类目 -->
 		<view class="sort spac">
 			<view class="sortBtn">
-				<van-button type="info" bind:click="choiceSort">请选择类目</van-button>
+				<van-button bind:click="choiceSort">选择类目</van-button>
 			</view>
 			<view class="sortText">
 				<van-cell-group>
@@ -41,10 +41,7 @@
 
 		<!-- 动态生成组件 -->
 		<view class="increCom" bindtap="incrementHandle">
-			<van-icon class="plusIcon" 
-								name="plus" 
-								size="50px" 
-								color="#1296db" />
+			<image src="../../images/publish/shuru-tianchong.png"></image>
 		</view>
 
 		<block wx:for="{{incrementList}}" wx:key="key">
@@ -57,7 +54,6 @@
 		</block>
 
 		<button class="spac" 
-						type="primary" 
 						form-type="submit">提交</button>
 	</form>
 </view>

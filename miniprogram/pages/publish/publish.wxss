@@ -23,10 +23,15 @@
   right: 100rpx;
   width: 130rpx;
   height: 130rpx;
-  border: 1rpx solid #eee;
+/*   border: 1rpx solid #eee;
   border-radius: 50%;
   background-color: #eee;
-  box-shadow: 2rpx 2rpx 10rpx 5rpx #1296db;
+  box-shadow: 2rpx 2rpx 10rpx 5rpx #1296db; */
+}
+
+.increCom image {
+  height: 100rpx;
+  width: 100rpx;
 }
 
 .plusIcon {
