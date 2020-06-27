@@ -44,7 +44,7 @@ Page({
     this.setData({
       blogInfo: []
     })
-    console.log(blogInfoData)
+    // console.log(blogInfoData)
     this.setData({
       blogInfo: blogInfoData
     })
@@ -80,7 +80,7 @@ Page({
         this.setData({
           swiperInfo: res.data
         })
-        console.log(res.data)
+        // console.log(res.data)
       })
   },
   // 检查是否登录
@@ -111,7 +111,7 @@ Page({
     // 将 getBlogInfo 云函数获取到的数据库信息赋值给全局变量 blogInfoData
     blogInfoData = cloudResult.result.data.reverse()
 
-    console.log(blogInfoData)
+    // console.log(blogInfoData)
 
     let maxPage = Math.ceil(blogInfoData.length / this.data.blogPage)
 
@@ -133,7 +133,7 @@ Page({
     this.setData({
       blogInfo: this.data.blogInfo.concat(arrBlog)
     }, () => {
-      console.log(this.data.blogInfo)
+      // console.log(this.data.blogInfo)
       callback()
     })
 
@@ -143,8 +143,8 @@ Page({
   async getTitle(e) {
 
     let inputData = e.detail
-    inputData = inputData.trim()
 
+    inputData = inputData.trim()
     if (inputData) {
       cloudResult = await wx.cloud.callFunction({
         name: 'blogInfoFindTitle',
@@ -155,20 +155,21 @@ Page({
 
       let searchResult = cloudResult.result.data
       searchData = searchResult
-      /*       app.globalData.searchData = searchResult
+      app.globalData.searchData = searchResult
 
-            let option = []
-            searchResult.map((item, index) => {
-              option.push({
-                text: item.title,
-                value: index
-              })
+          
+      let option = []
+      searchResult.map((item, index) => {
+        option.push({
+          text: item.title,
+          value: index
+        })
 
-            })
+      })
 
-            this.setData({
-              option
-            }) */
+      this.setData({
+        option
+      })
       if (searchResult.length > 0) {
         this.showPopup()
       }

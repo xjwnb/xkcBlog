@@ -1,3 +1,7 @@
+/**
+ * 增加评论操作
+ */
+
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
 

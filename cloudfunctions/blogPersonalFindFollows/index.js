@@ -1,3 +1,7 @@
+/**
+ * 获取登录用户的收藏信息
+ */
+
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
 

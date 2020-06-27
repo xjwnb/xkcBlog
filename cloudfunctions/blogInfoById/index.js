@@ -1,3 +1,7 @@
+/**
+ * 通过ID找对应信息
+ */
+
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
 

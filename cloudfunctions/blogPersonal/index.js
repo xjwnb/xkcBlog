@@ -1,3 +1,7 @@
+/**
+ * 创建登录用户的集合内容
+ */
+
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
 

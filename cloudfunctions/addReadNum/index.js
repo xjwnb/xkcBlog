@@ -1,3 +1,7 @@
+/**
+ * 阅读量加1
+ */
+
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
 
