@@ -1,5 +1,5 @@
 <scroll-view>
-	<van-tabs active="微信小程序" color="#1296db" swipeable >
+	<van-tabs active="Web" color="#1296db" swipeable >
 		<block wx:key="key" wx:for="{{blogInfo}}">
 			<van-tab title="{{item[0].sort}}" name="{{item[0].sort}}">
 				<block wx:key="key" wx:for="{{item}}" wx:for-item="bloglist" wx:for-index="list">

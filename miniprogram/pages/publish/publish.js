@@ -12,7 +12,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    sortList: ['微信小程序', 'Java', 'PHP', 'NodeJs', '人工智能'],
+    sortList: ['Web', 'Java', 'PHP', 'NodeJs', '人工智能'],
     componentsList: ['文本输入', '选择图片'],
     title: '',
     incrementList: [],

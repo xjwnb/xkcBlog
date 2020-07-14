@@ -30,7 +30,7 @@
       },
       {
         "pagePath": "pages/community/community",
-        "text": "社区",
+        "text": "分类",
         "iconPath": "./images/tabbar/community.png",
         "selectedIconPath": "./images/tabbar/community_active.png"
       },

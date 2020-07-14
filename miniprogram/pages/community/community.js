@@ -51,7 +51,7 @@ Page({
     let AIBlogInfo = []
     // 遍历 blogInfo数组 分别分类
     blogInfo.map(item => {
-      if (item.sort === '微信小程序') {
+      if (item.sort === 'Web') {
         wxBlogInfo.push(item)
         return item
       } else if (item.sort === "Java") {

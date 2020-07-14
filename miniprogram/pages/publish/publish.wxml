@@ -65,6 +65,7 @@
 							name="{{name}}" 
 							class="spac" 
 							focus 
+							maxlength="99999999999"
 							auto-height>
 		</textarea>
 	</view>
