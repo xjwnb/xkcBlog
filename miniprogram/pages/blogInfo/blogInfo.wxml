@@ -107,7 +107,7 @@
 <!-- 模板 -->
 <template name="textarea">
 	<view class="textarea">
-		<textarea auto-height name="{{name}}" value="{{content}}"></textarea>
+		<textarea disabled auto-height name="{{name}}" value="{{content}}"></textarea>
 	</view>
 </template>
 
